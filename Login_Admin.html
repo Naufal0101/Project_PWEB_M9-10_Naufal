@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - Hotel Nusantara Batu</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6e8efb, #76bdff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input:focus {
+            border-color: #6e8efb;
+            box-shadow: 0 0 5px rgba(110, 142, 251, 0.6);
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(90deg, #6e8efb, #5a9df5);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #79adfb, #6e8efb);
+        }
+        .hidden {
+            display: none;
+        }
+        nav {
+            background: #555;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            padding: 5px 10px;
+            background: #444;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #666;
+        }
+        main {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <h2>Login Admin</h2>
+        <form onsubmit="login(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan Username (admin)" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan Password (admin123)" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Admin Page -->
+    <div class="hidden" id="adminPage">
+        <header>
+            <h1>Admin Hotel Nusantara Batu</h1>
+        </header>
+        <nav>
+            <a href="#jenisKamar">Kelola Jenis Kamar</a>
+            <a href="#fasilitas">Kelola Fasilitas Hotel</a>
+            <a href="#dataPemesanan">Lihat Data Pemesanan</a>
+        </nav>
+        <main>
+            <!-- Kelola Jenis Kamar -->
+        <section id="jenisKamar">
+            <h2>Kelola Jenis Kamar</h2>
+            <form>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Kamar</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard</td>
+                        <td>Rp 300,000</td>
+                    </tr>
+                    <tr>
+                        <td>Superior</td>
+                        <td>Rp 500,000</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe</td>
+                        <td>Rp 900,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+                <label for="namaKamar">Nama Kamar:</label>
+                <input type="text" id="namaKamar" name="namaKamar" disabled>
+                <label for="hargaKamar">Harga Kamar:</label>
+                <input type="text" id="hargaKamar" name="hargaKamar" disabled>
+                <button type="button" disabled>Tambah Jenis Kamar</button>
+          
+            <!-- Kelola Fasilitas -->
+        <section id="fasilitas">
+            <h2>Kelola Fasilitas Hotel</h2>
+            <ul>
+                <li>Kolam Renang</li>
+                <li>Gym</li>
+                <li>Spa</li>
+            </ul>
+        </section>
+
+            <form>
+                <label for="namaFasilitas">Nama Fasilitas:</label>
+                <input type="text" id="namaFasilitas" name="namaFasilitas" disabled>
+                <button type="button" disabled>Tambah Fasilitas</button>
+            </form>
+           
+              <!-- Lihat Data Pemesanan -->
+              <section id="dataPemesanan">
+                <h2>Lihat Data Pemesanan</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Pemesan</th>
+                            <th>Jenis Kamar</th>
+                            <th>Tanggal Check-in</th>
+                            <th>Tanggal Check-out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Deluxe</td>
+                            <td>2025-01-15</td>
+                            <td>2025-01-18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+    </html>
+            
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Validasi sederhana
+            if (username === "admin" && password === "admin123") {
+                document.getElementById("loginPage").classList.add("hidden");
+                document.getElementById("adminPage").classList.remove("hidden");
+            } else {
+                alert("Username atau password salah!");
+            }
+        }
+    </script>
+</body>
+</html>
